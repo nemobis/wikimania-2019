@@ -1,0 +1,92 @@
+@font-face{
+  font-family: 'Alegreya';
+  font-weight: normal;
+  src: url('https://inventaire.io/public/fonts/Alegreya-Regular.ttf');
+}
+
+@font-face{
+  font-family: 'Alegreya';
+  font-weight: bold;
+  src: url('https://inventaire.io/public/fonts/Alegreya-Bold.ttf');
+}
+
+@font-face{
+  font-family: 'Alegreya Sans';
+  font-weight: normal;
+  src: url('https://inventaire.io/public/fonts/AlegreyaSans-Regular.ttf');
+}
+
+@font-face{
+  font-family: 'Alegreya Sans';
+  font-weight: bold;
+  src: url('https://inventaire.io/public/fonts/AlegreyaSans-Bold.ttf');
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+$light-blue: #319cc2;
+
+body{
+  font-size: 200%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+$controls-height: 3rem;
+
+main{
+  flex: 1 0 0;
+  align-self: stretch;
+  padding: $controls-height 1em;
+  // min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav{
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: $controls-height;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: rgba(white, 0.5);
+  padding: 0 1rem;
+  line-height: $controls-height;
+  &, a{
+    color: white;
+  }
+}
+
+.arrow{
+  display: block;
+  padding: 0 0.5rem 0.2rem 0.5rem;
+  font-size: 180%;
+  transform: scale(1.5, 1);
+  &:hover{
+    background-color: rgba(white, 0.5);
+  }
+}
+
+h1, h2, h3, h4, h5{
+  font-family: Alegreya;
+  text-align: center;
+}
+
+h1{
+  font-size: 300%;
+}
+
+#page-1{
+  background-color: $light-blue;
+  color: white;
+}

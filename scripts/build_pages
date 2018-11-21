@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+const marked = require('marked')
+const { readFile, readFileSync, writeFile } = require('fs')
+const { promisify } = require('util')
+const { exec } = require('child_process')
+const execAsync = promisify(exec)
+const readFileAsnyc = promisify(readFile)
+const writeFileAsnyc = promisify(writeFile)
+const template = require('../src/template')
+
+const getMarkdownFilenames = () => {
+  return execAsync('ls ./src/pages')
+  .then(res => res.stdout.trim().split('\n'))
+}
+
+const convertToHtml = totalFiles => filename => {
+  return readFileAsnyc(`./src/pages/${filename}`, { encoding: 'utf-8'})
+  .then(mdFile => {
+    const numericId = parseInt(filename.split('.')[0])
+    const content = marked(mdFile)
+    return template({ numericId, totalFiles, content })
+  })
+  .then(htmlFile => writeFileAsnyc(`./public/pages/${changeExtension(filename)}`, htmlFile))
+}
+
+const changeExtension = filename => filename.replace('.md', '.html')
+
+getMarkdownFilenames()
+.then(fileNames => Promise.all(fileNames.map(convertToHtml(fileNames.length))))
