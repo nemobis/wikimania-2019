@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+mkdir -p pages
 ./scripts/build_pages
-node-sass ./src/style.scss > ./public/style.css
+node-sass ./src/style.scss > ./style.css

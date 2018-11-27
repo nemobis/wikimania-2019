@@ -1,5 +1,5 @@
 node_modules
-public/pages
-public/style.css
+pages/*html
+style.css
 package-lock.json
 

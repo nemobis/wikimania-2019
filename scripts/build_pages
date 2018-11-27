@@ -20,7 +20,7 @@ const convertToHtml = totalFiles => filename => {
     const content = marked(mdFile)
     return template({ numericId, totalFiles, content })
   })
-  .then(htmlFile => writeFileAsnyc(`./public/pages/${changeExtension(filename)}`, htmlFile))
+  .then(htmlFile => writeFileAsnyc(`./pages/${changeExtension(filename)}`, htmlFile))
 }
 
 const changeExtension = filename => filename.replace('.md', '.html')

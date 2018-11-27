@@ -6,7 +6,6 @@ const lastPageNumericId = 15
 const previousPage = () => {
   const previousPageNumericId = filenameNumericId - 1
   if (previousPageNumericId < 1) return
-  console.log('prev')
   navigatePage(previousPageNumericId)
 }
 
@@ -17,7 +16,6 @@ const nextPage = () => {
 }
 
 const navigatePage = pageNumericId => {
-  console.log('navigatePage', pageNumericId)
   document.location.href = `${pagesRoot}/${pageNumericId}.html`
 }
 
