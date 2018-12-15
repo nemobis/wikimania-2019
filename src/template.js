@@ -18,7 +18,7 @@ module.exports = context => {
       <div id="progression">${numericId}/${totalFiles}</div>
       ${next}
     </div>
-    <script src="../index.js" />
+    <script src="../index.js"></script>
   </body>
   </html>`
 }
