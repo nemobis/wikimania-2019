@@ -38,12 +38,21 @@ body{
   font-family: 'Alegreya Sans';
 }
 
+strong{
+  color: #123456;
+}
+
+p{
+  margin: 0.4em 0;
+  font-size: 1.2em;
+}
+
 $controls-height: 3rem;
 
 main{
   flex: 1 0 0;
   align-self: stretch;
-  padding: $controls-height 1em;
+  padding: 2rem 0.5em 3rem 0.5em;
   // min-height: 90vh;
   display: flex;
   flex-direction: column;
@@ -61,7 +70,11 @@ ul li{
 }
 
 p, ul{
-  max-width: 50rem;
+  max-width: 80rem;
+}
+
+img{
+  margin: 1em;
 }
 
 #nav{

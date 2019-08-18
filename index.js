@@ -1,7 +1,7 @@
 const pagesRoot = document.location.href.split('/').slice(0, -1).join('/')
 const filename = document.location.pathname.split('/').slice(-1)[0]
 const filenameNumericId = parseInt(filename.split('.')[0])
-const lastPageNumericId = 15
+const lastPageNumericId = 19
 
 document.addEventListener('DOMContentLoaded', event => {
   const previousPage = () => {
